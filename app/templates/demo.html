@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Demo - {{ api }}</title>
+</head>
+<body>
+    <form action="/{{api}}" method="POST" enctype="multipart/form-data">
+        {% if api != 'speech_recognition' %}
+        <input type="file" 
+            accept=".jpg, .jpeg, .png"
+            name="file">
+        {% else %}
+        <input type="file" 
+            accept=".wav"
+            name="file">
+        {% endif %}
+        <br><br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
