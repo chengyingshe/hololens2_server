@@ -1,19 +1,16 @@
-import threading
 import json
 import os
 import sys
-import time
 import numpy as np
 
-CUR_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(CUR_DIR))
-
+PROJ_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(PROJ_DIR)
 from server_client.server_client import Server, Client
 
 parameters = {
     'temp_file': {
-        'image': os.path.join(CUR_DIR, 'temp/tmp_image.jpg'),
-        'audio': os.path.join(CUR_DIR, 'temp/tmp_audio.wav')
+        'image': os.path.join(PROJ_DIR, 'temp/tmp_image.jpg'),
+        'audio': os.path.join(PROJ_DIR, 'temp/tmp_audio.wav')
     },
     'port': {
         'ocr': 7878,

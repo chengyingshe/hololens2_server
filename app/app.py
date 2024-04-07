@@ -29,6 +29,7 @@ def run_api(api):
         type = 'audio' if api == 'speech_recognition' else 'image'
         output_path = parameters['temp_file'][type]
         save_file_to(file, output_path)
+        print(f'save file to: {output_path}')
         # 将保存到本地的文件的路径发送给识别程序
         if api == 'ocr':
             result = ocrHandle.text_predict_from_image_path(output_path)
