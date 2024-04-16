@@ -1,3 +1,4 @@
+import base64
 import json
 import os
 import sys
@@ -46,12 +47,13 @@ parameters = {
     }
 }
 
-def save_file_to(f, to_path):
+def save_file_str_to(f_str: str, to_path: str):
     dirname = os.path.dirname(to_path)
     if not os.path.exists(dirname):
         os.makedirs(dirname, exist_ok=True)
-    f.save(to_path)
-
+    with open(to_path, 'wb') as f:
+        f.write(base64.b64decode(f_str))
+    
 def cvt_ocr_result_to_json(result, to_str=False):
     data_obj = {
         "data": {

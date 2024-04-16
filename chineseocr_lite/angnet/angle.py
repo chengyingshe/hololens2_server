@@ -49,9 +49,7 @@ class AngleNetHandle:
 
 if __name__ == "__main__":
     crnn_handle = AngleNetHandle(model_path="../models/angle_net.onnx")
-    import glob
-    imgs = glob.glob("/Users/yanghuiyu/Desktop/myself/OCR/mbv3_crnn/test_imgs/*p*g")
-    for im_path in imgs:
-        im = Image.open(im_path).convert("RGB")
+    im_path = 'D:\\MyProject\\part-time-job\\hololens2\\test\\ocr3.jpg'
+    im = Image.open(im_path).convert("RGB")
 
-        print(im_path , crnn_handle.predict_rbg(im))
+    print(im_path , crnn_handle.predict_rbg(im))
