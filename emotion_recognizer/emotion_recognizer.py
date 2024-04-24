@@ -27,6 +27,6 @@ class EmotionRecognizer:
         prob = preds[max_index]
         return (er_params['emotions'][max_index], prob)
     
-    def recognize_emotion_from_path(self, image_path):
+    def recognize_emotion_from_path(self, image_path: str):
         image = cv2.imread(image_path)
         return self.recognize_emotion_from_image(image)

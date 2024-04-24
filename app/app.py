@@ -9,7 +9,7 @@ api_list = parameters['port'].keys()
 app = Flask(__name__)
 ocrHandle = OcrHandle()
 emotionRecognizer = EmotionRecognizer()
-speechRecognizer = SpeechRecognizer()
+speechRecognizer = SpeechRecognizer(device='cpu')
 
 
 @app.route('/')
@@ -31,7 +31,7 @@ def run_api(api):
             
         type = 'audio' if api == 'speech_recognition' else 'image'
         output_path = parameters['temp_file'][type]
-        save_file_str_to(file_str, output_path)
+        save_file_str_to(file_str, output_path, False)
         print(f'save file to: {output_path}')
         # 将保存到本地的文件的路径发送给识别程序
         if api == 'ocr':
@@ -42,10 +42,11 @@ def run_api(api):
             result = cvt_sr_result_to_json(result)
         elif api == 'face_emotion_recognition':
             result = emotionRecognizer.recognize_emotion_from_path(output_path)
+            print(f'result: {result}')
             result = cvt_fer_result_to_json(result)
         else:
             return 'invalid api'
-
+        print(f'result: {result}')
         return result
 
     index()

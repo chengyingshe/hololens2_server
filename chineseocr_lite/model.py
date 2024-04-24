@@ -80,7 +80,7 @@ class  OcrHandle(object):
         return result
 
     def text_predict_from_image_path(self, image_path, short_size=320):
-        print(f'predict image: {image_path}')
+        # print(f'predict image: {image_path}')
         img = cv2.imread(image_path)
         return self.text_predict(img, short_size=short_size)
 

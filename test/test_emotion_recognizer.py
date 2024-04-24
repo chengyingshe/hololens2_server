@@ -1,5 +1,5 @@
 import _init_path
-from emotion_recongnizer.emotion_recognizer import EmotionRecognizer
+from emotion_recognizer.emotion_recognizer import EmotionRecognizer
 import cv2
 
 emotionRecog = EmotionRecognizer()
