@@ -1,3 +1,5 @@
+
+
 ## Hololens2_Server
 
 本项目是为科研项目开发的服务器端程序，基于[Flask](https://flask.palletsprojects.com/en/3.0.x/)轻量级Web应用框架
@@ -29,7 +31,7 @@
 
 ![1712244011581](README.assets/1712244011581.png)
 
-4. 点击对应的文本超链接可以测试已经写好的Web测试应用
+4. 点击对应的文本超链接可以测试已经写好的Web测试应用（图像类接口支持 `.jpg`、`.jpeg`、`.png`，语音识别接口支持 `.wav`）
 
 ![1712244776481](README.assets/1712244776481.png)
 
@@ -38,4 +40,3 @@
 `whisper` 报错文件不存在
 
 > 需要安装 `ffmpeg` ，[FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds/releases)
-
